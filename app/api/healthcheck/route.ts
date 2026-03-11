@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export const config = {
-  regions: ["bom1"]
+    regions: ["bom1"],
 };
 
 export async function GET() {
