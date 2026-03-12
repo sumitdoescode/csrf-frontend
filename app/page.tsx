@@ -6,7 +6,7 @@ import axios from "axios";
 const page = () => {
     useEffect(() => {
         const fetchData = async () => {
-            const { data } = await axios.get("https://testing-backend-mabc.onrender.com", {
+            const { data } = await axios.get("https://testing-backend.sumit-does-code.workers.dev", {
                 withCredentials: true,
             });
             console.log(data);
@@ -16,7 +16,7 @@ const page = () => {
 
     const login = async () => {
         const { data } = await axios.post(
-            "https://testing-backend-mabc.onrender.com/login",
+            "https://testing-backend.sumit-does-code.workers.dev/login",
             {
                 username: "sumit",
                 password: "password",
@@ -28,7 +28,7 @@ const page = () => {
         console.log(data);
     };
     const dashboard = async () => {
-        const { data } = await axios.get("https://testing-backend-mabc.onrender.com/dashboard", {
+        const { data } = await axios.get("https://testing-backend.sumit-does-code.workers.dev/dashboard", {
             withCredentials: true,
         });
         console.log(data);
