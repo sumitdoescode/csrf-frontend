@@ -59,10 +59,16 @@ const page = () => {
 
     const createTodo = async () => {
         try {
-            const { data } = await axios.post("https://csrf-backend.sumitdoescode.me/api/todos", {
-                title: "todo 1",
-                description: "todo description 1",
-            });
+            const { data } = await axios.post(
+                "https://csrf-backend.sumitdoescode.me/api/todos",
+                {
+                    title: "todo 1",
+                    description: "todo description 1",
+                },
+                {
+                    withCredentials: true,
+                },
+            );
             console.log(data);
         } catch (error: any) {
             console.log(error.response.data);
