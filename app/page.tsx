@@ -84,6 +84,9 @@ const page = () => {
             <button onClick={me} className="bg-black text-white p-2 rounded-md">
                 Me
             </button>
+            <button onClick={createPost} className="bg-black text-white p-2 rounded-md">
+                Create Post
+            </button>
         </div>
     );
 };
