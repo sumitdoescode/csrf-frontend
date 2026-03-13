@@ -34,7 +34,7 @@ const page = () => {
         console.log(data);
     };
     const logout = async () => {
-        const { data } = await axios.post("https://csrf-backend.sumitdoescode.me/logout", {
+        const { data } = await axios.get("https://csrf-backend.sumitdoescode.me/logout", {
             withCredentials: true,
         });
         console.log(data);
