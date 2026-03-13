@@ -33,6 +33,12 @@ const page = () => {
         });
         console.log(data);
     };
+    const logout = async () => {
+        const { data } = await axios.post("https://csrf-backend.sumitdoescode.me/logout", {
+            withCredentials: true,
+        });
+        console.log(data);
+    };
 
     return (
         <div>
@@ -41,6 +47,9 @@ const page = () => {
             </button>
             <button onClick={dashboard} className="bg-black text-white p-2 rounded-md">
                 Dashboard
+            </button>
+            <button onClick={logout} className="bg-black text-white p-2 rounded-md">
+                Logout
             </button>
         </div>
     );
