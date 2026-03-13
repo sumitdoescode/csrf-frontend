@@ -4,21 +4,20 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const page = () => {
-    useEffect(() => {
-        const fetchData = async () => {
-            const { data } = await axios.get("https://csrf-backend.sumitdoescode.me", {
-                withCredentials: true,
-            });
-            console.log(data);
-        };
-        fetchData();
-    }, []);
+    const register = async () => {
+        const { data } = await axios.post("https://csrf-backend.sumitdoescode/api/users/register", {
+            name: "sumit",
+            email: "sumit@gmail.com",
+            password: "password",
+        });
+        console.log(data);
+    };
 
     const login = async () => {
         const { data } = await axios.post(
-            "https://csrf-backend.sumitdoescode.me/login",
+            "https://csrf-backend.sumitdoescode.me/api/users/login",
             {
-                username: "sumit",
+                email: "sumit@gmail.com",
                 password: "password",
             },
             {
@@ -27,44 +26,35 @@ const page = () => {
         );
         console.log(data);
     };
-    const dashboard = async () => {
-        const { data } = await axios.get("https://csrf-backend.sumitdoescode.me/dashboard", {
-            withCredentials: true,
-        });
-        console.log(data);
-    };
+
     const logout = async () => {
-        const { data } = await axios.get("https://csrf-backend.sumitdoescode.me/logout", {
+        const { data } = await axios.get("https://csrf-backend.sumitdoescode.me/api/users/logout", {
             withCredentials: true,
         });
         console.log(data);
     };
-    const subscribe = async () => {
-        const { data } = await axios.post(
-            "https://csrf-backend.sumitdoescode/me/subscribe",
-            {
-                to: "codewithharry",
-            },
-            {
-                withCredentials: true,
-            },
-        );
+
+    const me = async () => {
+        const { data } = await axios.get("https://csrf-backend.sumitdoescode.me/api/users/me", {
+            withCredentials: true,
+        });
         console.log(data);
     };
 
     return (
-        <div>
+        <div className="flex flex-col gap-2">
+            <button onClick={register} className="bg-black text-white p-2 rounded-md">
+                Register
+            </button>
             <button onClick={login} className="bg-black text-white p-2 rounded-md">
                 Login
             </button>
-            <button onClick={dashboard} className="bg-black text-white p-2 rounded-md">
-                Dashboard
-            </button>
+
             <button onClick={logout} className="bg-black text-white p-2 rounded-md">
                 Logout
             </button>
-            <button onClick={subscribe} className="bg-black text-white p-2 rounded-md">
-                Subscriber to Code with harry
+            <button onClick={me} className="bg-black text-white p-2 rounded-md">
+                Me
             </button>
         </div>
     );
