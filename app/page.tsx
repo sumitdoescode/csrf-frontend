@@ -5,40 +5,56 @@ import axios from "axios";
 
 const page = () => {
     const register = async () => {
-        const { data } = await axios.post("https://csrf-backend.sumitdoescode.me/api/users/register", {
-            name: "sumit",
-            email: "sumit@gmail.com",
-            password: "password",
-        });
-        console.log(data);
+        try {
+            const { data } = await axios.post("https://csrf-backend.sumitdoescode.me/api/users/register", {
+                name: "sumit",
+                email: "sumit@gmail.com",
+                password: "password",
+            });
+            console.log(data);
+        } catch (error: any) {
+            console.log(error.response.data);
+        }
     };
 
     const login = async () => {
-        const { data } = await axios.post(
-            "https://csrf-backend.sumitdoescode.me/api/users/login",
-            {
-                email: "sumit@gmail.com",
-                password: "password",
-            },
-            {
-                withCredentials: true,
-            },
-        );
-        console.log(data);
+        try {
+            const { data } = await axios.post(
+                "https://csrf-backend.sumitdoescode.me/api/users/login",
+                {
+                    email: "sumit@gmail.com",
+                    password: "password",
+                },
+                {
+                    withCredentials: true,
+                },
+            );
+            console.log(data);
+        } catch (error: any) {
+            console.log(error.response.data);
+        }
     };
 
     const logout = async () => {
-        const { data } = await axios.get("https://csrf-backend.sumitdoescode.me/api/users/logout", {
-            withCredentials: true,
-        });
-        console.log(data);
+        try {
+            const { data } = await axios.get("https://csrf-backend.sumitdoescode.me/api/users/logout", {
+                withCredentials: true,
+            });
+            console.log(data);
+        } catch (error: any) {
+            console.log(error.response.data);
+        }
     };
 
     const me = async () => {
-        const { data } = await axios.get("https://csrf-backend.sumitdoescode.me/api/users/me", {
-            withCredentials: true,
-        });
-        console.log(data);
+        try {
+            const { data } = await axios.get("https://csrf-backend.sumitdoescode.me/api/users/me", {
+                withCredentials: true,
+            });
+            console.log(data);
+        } catch (error: any) {
+            console.log(error.response.data);
+        }
     };
 
     return (
