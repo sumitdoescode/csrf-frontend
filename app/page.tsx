@@ -60,8 +60,8 @@ const page = () => {
     const createTodo = async () => {
         try {
             const { data } = await axios.post("https://csrf-backend.sumitdoescode.me/api/todos", {
-                title: "post 1",
-                description: "description 1",
+                title: "todo 1",
+                description: "todo description 1",
             });
             console.log(data);
         } catch (error: any) {
