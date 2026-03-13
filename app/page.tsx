@@ -5,7 +5,7 @@ import axios from "axios";
 
 const page = () => {
     const register = async () => {
-        const { data } = await axios.post("https://csrf-backend.sumitdoescode/api/users/register", {
+        const { data } = await axios.post("https://csrf-backend.sumitdoescode.me/api/users/register", {
             name: "sumit",
             email: "sumit@gmail.com",
             password: "password",
