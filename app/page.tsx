@@ -39,6 +39,18 @@ const page = () => {
         });
         console.log(data);
     };
+    const subscribe = async () => {
+        const { data } = await axios.post(
+            "https://csrf-backend.sumitdoescode/me/subscribe",
+            {
+                to: "codewithharry",
+            },
+            {
+                withCredentials: true,
+            },
+        );
+        console.log(data);
+    };
 
     return (
         <div>
@@ -50,6 +62,9 @@ const page = () => {
             </button>
             <button onClick={logout} className="bg-black text-white p-2 rounded-md">
                 Logout
+            </button>
+            <button onClick={subscribe} className="bg-black text-white p-2 rounded-md">
+                Subscriber to Code with harry
             </button>
         </div>
     );
