@@ -57,6 +57,18 @@ const page = () => {
         }
     };
 
+    const createPost = async () => {
+        try {
+            const { data } = await axios.post("https://csrf-backend.sumitdoescode.me/api/posts", {
+                title: "post 1",
+                description: "description 1",
+            });
+            console.log(data);
+        } catch (error: any) {
+            console.log(error.response.data);
+        }
+    };
+
     return (
         <div className="flex flex-col gap-2">
             <button onClick={register} className="bg-black text-white p-2 rounded-md">
